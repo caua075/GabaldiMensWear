@@ -8,16 +8,16 @@
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{ asset('img/') }}" class="d-block w-100" alt="Banner 1">
+          <img src="{{ asset('') }}" class="d-block w-100" alt="Banner 1">
         </div>
         <div class="carousel-item">
-          <img src="{{ asset('img/') }}" class="d-block w-100" alt="Banner 2">
+          <img src="{{ asset('') }}" class="d-block w-100" alt="Banner 2">
         </div>
         <div class="carousel-item">
-          <img src="{{ asset('img/') }}" class="d-block w-100" alt="Banner 3">
+          <img src="{{ asset('') }}" class="d-block w-100" alt="Banner 3">
         </div>
         <div class="carousel-item">
-          <img src="{{ asset('img/') }}" class="d-block w-100" alt="Banner 4">
+          <img src="{{ asset('') }}" class="d-block w-100" alt="Banner 4">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
