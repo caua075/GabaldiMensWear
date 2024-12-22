@@ -64,27 +64,27 @@
     </header>
     <header class="d-flex flex-wrap align-items-center justify-content-evenly py-2 mb-2 border-bottom">
       <nav class="d-flex col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
-        <a href="/" class="nav-link px-2 link-secondary">Home</a>
+        <a href="/" class="nav-link px-2 link-dark">Home</a>
       </nav>
       <nav class="d-flex col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
-        <a href="#" class="nav-link px-2 link-dark">Produtos</a>
+        <a href="/products/create" class="nav-link px-2 link-dark">Produtos</a>
       </nav>
       <nav class="d-flex col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
         <a href="#" class="nav-link px-2 link-dark">Novidades</a>
       </nav>
     </header>
   </div>
-    <main>
+    <main class="container">
         @yield('content')
     </main>
 
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
-          <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-body-dark text-decoration-none lh-1">
             <img class="bi" width="30" height="24" src="{{ asset('img/tl_princ.svg') }}" alt="Logo Loja gabaldimenswear" />
           </a>
-          <span class="mb-3 mb-md-0 text-body-secondary">&copy; {{date('Y')}} Gabaldi MensWear</span>
+          <span class="mb-3 mb-md-0 text-body-dark">&copy; {{date('Y')}} Gabaldi MensWear</span>
         </div>
         
         @php
