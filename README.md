@@ -1,4 +1,4 @@
-# 👕 GabaldiMensWear - Sistema Web de E-commerce para Loja de Roupas
+# GabaldiMensWear - Sistema Web de E-commerce para Loja de Roupas 👕
 
 ## Sobre o Projeto
 Este sistema web foi desenvolvido para uma loja de roupas com o objetivo de alcançar um público maior e permitir que os clientes realizem compras online. Além disso, ele oferece funcionalidades administrativas para o gerenciamento de produtos, proporcionando maior controle ao proprietário.
