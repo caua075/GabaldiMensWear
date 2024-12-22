@@ -31,7 +31,7 @@ Este sistema web foi desenvolvido para uma loja de roupas com o objetivo de alca
 ## Como Configurar e Executar o Sistema
 1. Clone o repositório do projeto:
    ```bash
-   git clone [<URL_DO_REPOSITORIO>](https://github.com/caua075/GabaldiMensWear.git)
+   git clone https://github.com/caua075/GabaldiMensWear.git
    ```
 2. Navegue até o diretório do projeto:
    ```bash
@@ -94,4 +94,4 @@ Contribuições são bem-vindas! Para contribuir:
 5. Abra um pull request no repositório original.
 
 ---
-**Desenvolvido por:** [Cauã de Andrade Gonçalves]
+**Desenvolvido por:** Cauã de Andrade Gonçalves
