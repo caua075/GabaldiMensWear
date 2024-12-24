@@ -35,6 +35,7 @@ Este sistema web foi desenvolvido para uma loja de roupas com o objetivo de alca
    ```
 2. Navegue até o diretório do projeto:
    ```bash
+   cd GabaldiMensWear
    cd e-commerce-roupa
    ```
 3. Instale as dependências do Laravel:
