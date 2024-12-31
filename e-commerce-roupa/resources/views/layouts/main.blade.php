@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="E-commerce de roupas com os melhores preços e qualidade.">
     <meta name="keywords" content="roupas, e-commerce, moda, masculino">
-    <title>@yield('title') Gabaldi MensWear</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <title>Gabaldi MensWear @yield('title')</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Favicon -->
     <link rel="icon" href="{{ asset('img/tl_princ.ico') }}" type="image/x-icon">
 </head>
 
@@ -30,6 +34,11 @@
   </symbol>
   <symbol id="search"viewBox="0 0 16 16">
     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+  </symbol>
+
+  <symbol id="loc" viewBox="0 0 16 16">
+    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
   </symbol>
 </svg>
 
@@ -69,13 +78,19 @@
       <nav class="d-flex col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
         <a href="/products/create" class="nav-link px-2 link-dark">Produtos</a>
       </nav>
+
       <nav class="d-flex col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
-        <a href="#" class="nav-link px-2 link-dark">Novidades</a>
+        <a href="/products/store" class="nav-link px-2 link-dark">Novidades</a>
       </nav>
     </header>
   </div>
     <main class="container">
-        @yield('content')
+        <div class="row">
+          @if(session('msg'))
+            <p class="msg">{{session('msg')}}</p>
+          @endif
+          @yield('content')
+        </div>
     </main>
 
     <div class="container">
@@ -92,6 +107,7 @@
           $mensagem = urlencode('Olá, gostaria de saber mais sobre os produtos!');
         @endphp
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-body-secondary" href="https://maps.app.goo.gl/w3ohZdffP7c3kCc67" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#loc"/></svg></a></li>
           <li class="ms-3"><a class="text-body-secondary" href="https://wa.me/{{ $numero }}?text={{ $mensagem }}" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#whatsapp"/></svg></a></li>
           <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/gabaldimenswear" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
         </ul>

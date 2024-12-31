@@ -3,22 +3,32 @@
 
 @section('content')
 
-  <h1>Olá Muundo!</h1>
-  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-    @foreach ($products as $product)
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="{{ asset('') }}" class="d-block w-100" alt="{{$product->name}}">
-        </div>
-      <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </a>
-    @endforeach
-  </div>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center" id="container-principal">
+    <div class="col p-2 mx-auto my-3">
+      <h1 class="display-3 fw-bold">
+        <img src="/img/tl_princ.jpeg" class="mx-1" width="50" alt="Logo da Loja">
+        Gabaldi Mens Wear
+        <img src="/img/tl_princ.jpeg" class="mx-1" width="50" alt="Logo da Loja">
+      </h1>
+      <h3 class="fw-normal text-muted mb-3">A qualidade que você precisa com a preço que cabe no seu bolso</h3>
+    </div>  
+</div>
 
+  @foreach ($products as $product)
+    <div class="col">
+      <div class="card shadow">
+        <img src="img/products/{{$product->image}}" alt="{{ $product->name }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+        <div class="card-body">
+          <p class="card-text">{{ $product->description }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/products/{{ $product->id }}" class="btn btn-sm btn-outline-primary">View</a>
+              <a href="/products/{{ $product->id }}/edit" class=" btn btn-sm btn-outline-warning">Edit</a>
+            </div>
+            <small class="text-body-secondary">{{ $product->created_at }}</small>
+          </div>
+        </div>
+      </div>
+    </div>  
+  @endforeach
 @endsection

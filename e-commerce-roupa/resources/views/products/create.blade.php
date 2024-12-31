@@ -2,8 +2,8 @@
 @section('title', 'Cadastrar Produtos')
 @section('content')
 
-<div id="form-products" style=" background-color: rgb(28,28,28,0.3); width: 75%; padding: 1%; border-radius: 1cap; margin-inline-start: 15%;" >
-    <form action="" method="POST" enctype="multipart/form-data" class="mx-auto" style="max-width: 60%;">
+<div id="form-products">
+    <form action="/products" method="POST" enctype="multipart/form-data" class="mx-auto" style="max-width: 60%;">
         <h2 class="text-center mb-4">Cadastro de Produto</h2>
         @csrf
         <!-- Nome do Produto -->
@@ -39,17 +39,17 @@
                 <label for="size" class="form-label">Tamanho</label>
                 <input type="text" name="size" id="size" class="form-control" required>
             </div>
-            <!-- Quantidade -->
+            <!-- Estoque -->
             <div class="col-md-6">
-                <label for="quantity" class="form-label">Quantidade</label>
-                <input type="number" name="quantity" id="quantity" class="form-control" required>
+                <label for="stock" class="form-label">Estoque</label>
+                <input type="number" name="stock" id="stock" class="form-control" required>
             </div>
         </div>
         <!-- Imagem -->
         <div class="mb-3">
-                <label for="image" class="form-label">Imagem</label>
-                <input type="file" name="image" id="image" class="form-control" required>
-            </div>
+            <label for="image" class="form-label">Imagem</label>
+            <input type="file" name="image" id="image" class="form-control" required>
+        </div>
         <!-- Botão de Envio e Limpeza -->
         <div class="d-flex justify-content-start">
             <button type="submit" class="btn btn-warning">Salvar Produto</button>
