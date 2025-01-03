@@ -7,14 +7,21 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
+use function Laravel\Prompts\search;
+
 class ProductController extends Controller
 {
     public function index()
     {
-        $seed = Carbon::now()->format('Ymd');
-        $products = Product::inRandomOrder($seed)->take(12)->get();
+        $search = request('search');
+        if ($search) {
+            $products = Product::where('name', 'like', '%' . $search . '%')->get();
+        } else {
+            $seed = Carbon::now()->format('Ymd');
+            $products = Product::inRandomOrder($seed)->take(12)->get();
+        }
 
-        return view('welcome', compact('products'));
+        return view('welcome', compact('products', 'search'));
     }
 
     public function create()

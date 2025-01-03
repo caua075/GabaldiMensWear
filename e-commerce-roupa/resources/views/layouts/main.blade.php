@@ -44,6 +44,7 @@
 
 <body>
   <div class="container">
+    <!-- Primeiro Header -->
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-between py-2 mb-2">
       <a href="/" class="d-flex align-items-center justify-content-center col-1 mb-2 text-dark text-decoration-none">
         <img class="bi" width="70" src="{{ asset('img/tl_princ.jpeg') }}" alt="Logo Loja gabaldimenswear">
@@ -55,7 +56,7 @@
 
       <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
         <li>
-          <a href="#" class="nav-link text-dark">
+          <a href="javascript:void(0)" class="nav-link text-dark" onclick="toggleSearch()">
             <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#search"/></svg>
           </a>
         </li>
@@ -71,16 +72,30 @@
         </li>
       </ul>
     </header>
+
+    <!-- Barra de Busca Colapsável -->
+    <div class="search-bar d-none py-3" id="searchBar" style="overflow: hidden; transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;">
+    <form method="GET" action="/" class="d-flex justify-content-center">
+      <input type="text" name="search" class="form-control w-50" placeholder="Buscar produtos..." value="{{ $search ?? '' }}">
+      <button type="submit" class="btn btn-warning mx-2">
+        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#search"/></svg>
+      </button>
+    </form>
+      <div class="mt-2 text-center">
+        <span class="badge bg-secondary">Camisetas</span>
+        <span class="badge bg-secondary">Tênis</span>
+        <span class="badge bg-secondary">Bermudas</span>
+        <span class="badge bg-secondary">Camisas</span>
+      </div>
+    </div>
+
+    <!-- Segundo Header -->
     <header class="d-flex flex-wrap align-items-center justify-content-evenly py-2 mb-2 border-bottom">
       <nav class="d-flex col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
         <a href="/" class="nav-link px-2 link-dark">Home</a>
       </nav>
       <nav class="d-flex col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
         <a href="/products/create" class="nav-link px-2 link-dark">Produtos</a>
-      </nav>
-
-      <nav class="d-flex col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
-        <a href="/products/store" class="nav-link px-2 link-dark">Novidades</a>
       </nav>
     </header>
   </div>
@@ -117,4 +132,12 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
+<script>
+  // Função para exibir ou ocultar a barra de busca
+  function toggleSearch() {
+    const searchBar = document.getElementById('searchBar');
+    searchBar.classList.toggle('d-none'); // Alterna a classe d-none
+  }
+</script>
 </html>
