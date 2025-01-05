@@ -24,14 +24,14 @@
     @foreach ($products as $product)
       <div class="col">
         <div class="card shadow h-100">
-          <img src="img/products/{{$product->image}}" alt="{{ $product->name }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+          <a href="/products/{{ $product->id }}"><img src="img/products/{{$product->image}}" alt="{{ $product->name }}" class="bd-placeholder-img card-img-top" width="100%" height="225"></a>
           <div class="card-body">
             <h5 class="card-title">{{ $product->name }}</h5>
             <p class="card-text">{{ $product->description }}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="/products/{{ $product->id }}" class="btn btn-sm btn-outline-primary">View</a>
-                <a href="/products/{{ $product->id }}/edit" class="btn btn-sm btn-outline-warning">Edit</a>
+                <a href="/products/{{ $product->id }}" class="btn btn-sm btn-outline-primary">Saber mais</a>
+                <a href="/products/{{ $product->id }}/edit" class="btn btn-sm btn-outline-warning">Editar</a>
               </div>
               <small class="text-muted">{{ $product->created_at->format('d/m/Y') }}</small>
             </div>
@@ -40,11 +40,12 @@
       </div>
     @endforeach
     @if (count($products) == 0 && $search)
-      <div class="col">
-        <div class="card shadow h-100"> <!-- Altura completa -->
+      <div class="col-md-6 offset-md-3 text-center">
+        <div class="card shadow h-auto">
           <div class="card-body">
             <h4 class="card-title">Nenhum produto encontrado</h4>
-            <p class="card-text">Infelizmente não encontramos nenhum produto com o termo "{{ $search }}". <a href="/">Ver outros produtos!</a></p>
+            <p class="card-text">Infelizmente não encontramos nenhum produto com o termo "{{ $search }}". </p>
+            <a href="/">Ver outros produtos!</a>
           </div>
         </div>
       </div>

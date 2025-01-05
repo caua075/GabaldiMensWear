@@ -54,4 +54,10 @@ class ProductController extends Controller
 
         return redirect('/')->with('msg', 'Produto cadastrado com sucesso!');
     }
+
+    public function show($id)
+    {
+        $product = Product::with('category')->findOrFail($id);
+        return view('products.show', ['product' => $product]);
+    }
 }
