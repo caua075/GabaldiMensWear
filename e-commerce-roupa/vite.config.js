@@ -8,5 +8,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    plugins: [laravel(['resources/js/app.js', 'resources/sass/app.scss'])],
 });
